@@ -2,7 +2,7 @@
 #include <string>
 using namespace std;
 
-#define MAX 10
+#define MAX 100
 
 struct order{
 	string idOrder;
@@ -18,15 +18,42 @@ int akhir = 2;
 order queueOrder[MAX];
 
 void tampil(){
-	//system("CLS");
+	system("CLS");
 	cout<<"Id Order\tNamaBarang\tJumlah\tAlamat\tJasa Kirim\n";
 	for(int i=0; i<akhir; i++){
 		cout<<queueOrder[i].idOrder<<"\t\t"<<queueOrder[i].barang<<"\t"<<queueOrder[i].jumlah<<"\t"<<queueOrder[i].alamat<<"\t"<<queueOrder[i].jasaKirim<<"\n";
 	}
 }
 
+//MAHESA
 void tambahOrder(int i, string idOrder, string barang, string jumlah, string alamat, string jasaKirim){
 
+}
+
+//MITHA & ISQIA
+void cari(){
+	
+}
+
+//HADI
+void urut(){
+	
+}
+
+bool full(){
+	if(akhir==MAX-1){
+		return true;
+	}else{
+		return false;
+	}
+}
+
+bool empty(){
+	if(akhir==-1){
+		return true;
+	}else{
+		return false;
+	}
 }
 
 main(){
