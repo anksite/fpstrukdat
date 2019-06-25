@@ -26,8 +26,13 @@ void tampil(){
 }
 
 //MAHESA
-void tambahOrder(int i, string idOrder, string barang, string jumlah, string alamat, string jasaKirim){
+void tambah(){//inQueue : Menambah item di akhir index
 
+}
+
+//HADI
+void urut(){
+	
 }
 
 //MITHA & ISQIA
@@ -35,8 +40,7 @@ void cari(){
 	
 }
 
-//HADI
-void urut(){
+void proses(){//deQueeu : Mengambilitem di awal index
 	
 }
 
@@ -80,7 +84,11 @@ main(){
 	cout<<"Input Pilihan: "; cin>>pilih;
 	
 	switch(pilih){
-		case 1: tampil(); break;
+		case 1: tampil(); 	break;
+		case 2: tambah(); 	break;
+		case 3: urut(); 	break;
+		case 4: cari(); 	break;
+		case 5: proses(); 	break;
 	}
 	
 	if(pilih!=6){
