@@ -64,6 +64,7 @@ void cari(){
 	
 }
 
+//FAQIH
 void proses(){//deQueeu : Mengambilitem di awal index
 	
 }
@@ -86,7 +87,7 @@ bool empty(){
 }
 
 void menu(){
-		int pilih;
+	int pilih;
 	cout<<"PROSES ORDER ONLINE SHOP\n";
 	cout<<"1. Tampilkan Order\n";
 	cout<<"2. Tambah Order\n";
