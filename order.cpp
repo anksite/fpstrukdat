@@ -12,18 +12,42 @@ struct order{
 	string jasaKirim;
 };
 
-int awal;
-int akhir = 2;
+int awal=-1, akhir=-1;
 
 order queueOrder[MAX];
+
+void init(){
+    ++awal;
+    ++akhir;
+	queueOrder[akhir].idOrder	    = to_string(1000+akhir);
+	queueOrder[akhir].barang		= "TAS BIRU";
+	queueOrder[akhir].jumlah		= 1;
+	queueOrder[akhir].alamat		= "BANTUL";
+	queueOrder[akhir].jasaKirim	    = "JNE"; //JNE, J&T, TIKI, POS
+	
+	++akhir;
+	queueOrder[akhir].idOrder		= to_string(1000+akhir);
+	queueOrder[akhir].barang		= "BUKU BIRU";
+	queueOrder[akhir].jumlah		= 8;
+	queueOrder[akhir].alamat		= "SLEMAN";
+	queueOrder[akhir].jasaKirim	    = "TIKI";
+	
+	++akhir;
+	queueOrder[akhir].idOrder		= to_string(1000+akhir);
+	queueOrder[akhir].barang		= "PAYUNG BIRU";
+	queueOrder[akhir].jumlah		= 3;
+	queueOrder[akhir].alamat		= "BALI";
+	queueOrder[akhir].jasaKirim	    = "POS";
+}
 
 void tampil(){
 	system("CLS");
 	cout<<"Id Order\tNamaBarang\tJumlah\tAlamat\tJasa Kirim\n";
-	for(int i=0; i<akhir; i++){
+	for(int i=awal; i<=akhir; i++){
 		cout<<queueOrder[i].idOrder<<"\t\t"<<queueOrder[i].barang<<"\t"<<queueOrder[i].jumlah<<"\t"<<queueOrder[i].alamat<<"\t"<<queueOrder[i].jasaKirim<<"\n";
 	}
 }
+
 
 //MAHESA
 void tambah(){//inQueue : Menambah item di akhir index
@@ -44,6 +68,7 @@ void proses(){//deQueeu : Mengambilitem di awal index
 	
 }
 
+
 bool full(){
 	if(akhir==MAX-1){
 		return true;
@@ -60,20 +85,8 @@ bool empty(){
 	}
 }
 
-main(){
-	queueOrder[0].idOrder	= "1001";
-	queueOrder[0].barang	= "TAS BIRU";
-	queueOrder[0].jumlah	= 1;
-	queueOrder[0].alamat	= "BANTUL";
-	queueOrder[0].jasaKirim	= "JNE"; //JNE, J&T, TIKI, POS
-	
-	queueOrder[1].idOrder	= "1002";
-	queueOrder[1].barang	= "BUKU BIRU";
-	queueOrder[1].jumlah	= 8;
-	queueOrder[1].alamat	= "SLEMAN";
-	queueOrder[1].jasaKirim	= "TIKI";
-	
-	int pilih;
+void menu(){
+		int pilih;
 	cout<<"PROSES ORDER ONLINE SHOP\n";
 	cout<<"1. Tampilkan Order\n";
 	cout<<"2. Tambah Order\n";
@@ -92,6 +105,11 @@ main(){
 	}
 	
 	if(pilih!=6){
-		main();
+		menu();
 	}
+}
+
+main(){
+	init();
+	menu();
 }
