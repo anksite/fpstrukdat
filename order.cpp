@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 using namespace std;
 
 #define MAX 100
@@ -83,16 +83,15 @@ void tampil(){
 void tambah(){
 	//inQueue : Menambah item di akhir index
 	if (full()){
-		cout<<"Maaf Pemesanan Kami Penuh,,Silahkan Order dilain Waktu";
+		cout<<"Maaf Pemesanan Kami Penuh, Silahkan Order dilain Waktu";
 	}else{
 		int Kuantitas;
 		string Adress;
-		char Pesanan[30];
+		string Pesanan;
 		string Jasa;
 		
 		cout<<" - Silahkan masukan nama barang pesanan : ";
-		//cin>>Pesanan;
-		cin.getline(Pesanan,sizeof(Pesanan));
+		cin.ignore();getline(cin, Pesanan);
 		cout<<" - Jumlah barang yang akan dipesan : ";
 		cin>>Kuantitas;
 		cout<<" - Alamat anda : ";
@@ -102,7 +101,7 @@ void tambah(){
 		
 		addData(Pesanan,Kuantitas,Adress,Jasa);
 		
-		cout<<"Data Berhasil Masuk";
+		cout<<"Data Berhasil Masuk\n";
 	}	
 }
 
